@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" ></script>
+
+</head>
+
+<body>
+
+<header>
+      <div class="container">
+        <nav><a class="navbar-brand" href="register"><img src="data:image/png;base64,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"  width="30" height="30" class="d-inline-block align-top" alt="" >
+</a>
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="register">home</a></li>
+            <li class="nav-item"><a class="nav-link" href="">about</a></li>
+            <li class="nav-item"><a class="nav-link" href="Post">create post</a></li>
+            <li class="nav-item"><a class="nav-link" href="">competences</a></li>
+            <li class="nav-item"><a class="nav-link" href="">contacts</a></li>
+          </ul>
+          <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+             <p style="padding-left-200px; float:right; color: white; padding-top: 5px; font-size: 1.6rem;">welcome {{ex}}</p>
+        </nav>
+      </div>
+    </header>
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+
+
+<div class="w3-sidebar w3-bar-block" style="background: linear-gradient(to right, #6610f2, #007bff);
+margin-top:50 padding-top: 10px;width: 14%;">
+
+    {% for i in con %}
+    <button class="w3-bar-item w3-button" onclick="openCity('{{i.title}}')">{{i.title}}</button>
+    {% endfor %}
+
+
+</div>
+
+
+<div style="padding-top: 20px; ">
+    {% for i in con %}
+<div id="{{i.title}}" class="w3-container city" style="display:none; margin-left:15%; border: 5px solid #021859;
+  border-radius: 25px; padding-bottom: 50px;  box-shadow: 10px 10px 8px #888888; background-color: #ededed;  color: black;
+  ">
+
+  <h2 style="font-size: bold;">Title:{{i.title}}</h2>
+  <h2>Content:</h2>
+  <p>{{i.content}}</p>
+    <button onclick="window.location.href='delete/{{i.id}}'" type="button" class="btn btn-danger" style="background-color: blue; width: 100px;
+box-shadow: 0 12px 16px 0 black; padding-top: 5px; border-radius: 20%;">Delete</button>
+
+
+</div>
+
+ {% endfor %}
+    </div>
+<br><br><br><br><br><br><br>
+<div style="text-align: center;width: 100%; padding-left: 15px;">
+    <h4>contact-details: +1123-234-3222</h4>
+    <h5>If any issues mail to: myblog123@gmail.com</h5>
+    <br>
+    <p style="width: 90%; padding-left: 300px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores atque, dolor earum eveniet exercitationem fugit illo illum libero perspiciatis quibusdam quis sapiente unde! A ab alias atque autem doloremque est laboriosam laudantium maiores nisi numquam, qui quibusdam, quis, quod repellat repudiandae ullam veniam. Alias hic necessitatibus reiciendis repellat sint!</p>
+</div>
+
+
+<script>
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(cityName).style.display = "block";
+}
+
+const elment = document.querySelector(".hamburger");
+const elment1 = document.querySelector(".nav-list");
+
+elment.addEventListener("click", () => {
+  elment.classList.toggle("active");
+  elment1.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+</body>
+</html>
+
+<style>
+    *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+
+:root {
+  --color0: #fff;
+  --color1: #f25ca2;
+  --color2: #0433bf;
+  --color3: #032ca6;
+  --color4: #021859;
+  --color5: #0b9ed9;
+  --color6: #000;
+}
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: white;
+
+}
+
+header {
+  width: 100%;
+  background-color: var(--color4);
+}
+
+.d-inline-block align-top{
+border-radius: 50%;
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+nav {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img {
+  width: 7rem;
+  height: 7rem;
+  display: flex;
+  border-radius: 50%;
+}
+
+.navbar-brand a {
+  font-size: 4rem;
+  color: var(--color0);
+  margin: auto;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: block;
+  margin: 0 2rem;
+  color: var(--color0);
+  text-transform: capitalize;
+  transform: scale(0);
+  transition: transform 650ms;
+}
+
+.nav-item {
+  position: relative;
+  line-height: 8rem;
+  transition-delay: 0.4s;
+  visibility: hidden;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color1);
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 650ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-item:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  width: 3.6rem;
+  height: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  line-height: 5rem;
+  z-index: 1500;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color0);
+  position: absolute;
+  display: block;
+  right: 0;
+  transition: all 650ms;
+}
+
+.hamburger .line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger .line:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+  width: 2.8rem;
+}
+
+.hamburger .line:nth-child(3) {
+  top: 100%;
+  margin-top: -2px;
+  width: 2rem;
+}
+
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(0.8rem) rotate(45deg);
+  width: 2rem;
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-0.8rem) rotate(-45deg);
+  width: 2rem;
+}
+
+.nav-list.active .nav-link {
+  transform: scale(1);
+}
+
+.nav-list.active .nav-item {
+  transition-delay: initial;
+  visibility: visible;
+}
+
+.nav-list.active .nav-item:nth-child(1) .nav-link {
+  transition-delay: 0.5s;
+}
+
+.nav-list.active .nav-item:nth-child(2) .nav-link {
+  transition-delay: 0.4s;
+}
+
+.nav-list.active .nav-item:nth-child(3) .nav-link {
+  transition-delay: 0.3s;
+}
+
+.nav-list.active .nav-item:nth-child(4) .nav-link {
+  transition-delay: 0.2s;
+}
+
+.nav-list.active .nav-item:nth-child(5) .nav-link {
+  transition-delay: 0.1s;
+}
+
+/* reverse animation */
+
+.nav-list .nav-item:nth-child(1) .nav-link {
+  transition-delay: 0.1s;
+}
+
+.nav-list .nav-item:nth-child(2) .nav-link {
+  transition-delay: 0.2s;
+}
+
+.nav-list .nav-item:nth-child(3) .nav-link {
+  transition-delay: 0.3s;
+}
+
+.nav-list .nav-item:nth-child(4) .nav-link {
+  transition-delay: 0.4s;
+}
+
+.nav-list .nav-item:nth-child(5) .nav-link {
+  transition-delay: 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color2);
+    position: fixed;
+    left: 0;
+    bottom: -100vh;
+    transform: bottom 650ms;
+  }
+
+  .nav-list.active {
+    bottom: 0;
+  }
+}
+
+</style>
